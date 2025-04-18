@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { ReactiveFormsModule,  FormBuilder, Validators  } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
+
 import { LanguagePipe } from '../../../pipes/language/language.pipe';
 import { AuthService } from '../../../services/auth/auth.service';
 import { ToastService } from '../../../state/toast/toast.service';
@@ -9,7 +10,7 @@ import { SelectIdiomComponent } from '../../../components/select-idiom/select-id
 
 @Component({
   selector: 'app-login',
-  imports: [ReactiveFormsModule, LanguagePipe, SelectIdiomComponent],
+  imports: [ReactiveFormsModule, LanguagePipe, SelectIdiomComponent, RouterLink],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })

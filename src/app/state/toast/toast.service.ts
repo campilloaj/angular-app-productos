@@ -4,6 +4,9 @@ import { messages } from '../../config/messages';
 import { LanguageService } from '../language/language.service';
 import { Subscription } from 'rxjs';
 
+//interfaces
+import { Idiom } from '../../interfaces/language/language.interface';
+
 export interface ToastMessage {
   id: number;
   message: string;
@@ -24,7 +27,7 @@ export class ToastService {
  
   private idCounter = 0;
   private subscription: Subscription;
-  private data: "ES" | "EN" = 'ES';
+  private data: Idiom = 'ES';
 
   constructor(){
     this.subscription = this.languageService.data$.subscribe((value) => {

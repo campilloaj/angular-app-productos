@@ -2,7 +2,10 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { Subscription } from 'rxjs';
 //Service
 import { LanguageService } from '../../state/language/language.service';
-import { configIdiom } from './configIdiom';
+import { configIdiom } from '../../config/configIdiom';
+
+//interfaces
+import { Idiom } from '../../interfaces/language/language.interface';
 
 @Pipe({
   name: 'language',
@@ -11,7 +14,7 @@ import { configIdiom } from './configIdiom';
 })
 export class LanguagePipe implements PipeTransform {
 
-  private data: "ES" | "EN" = 'ES';
+  private data: Idiom= 'ES';
   private subscription: Subscription;
 
   constructor(private languageService: LanguageService) {

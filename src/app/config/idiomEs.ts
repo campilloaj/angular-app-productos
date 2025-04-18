@@ -14,4 +14,6 @@ export const idiomEs = {
   etSegundoApellido: 'Segundo apellido',
   etContrasena:'Contraseña',
   etIniciarSesion:'Iniciar sesion',
+  etRecuperaContrasena:'Recuperar contraseña',
+  etRegresar:'Regresar'
 };

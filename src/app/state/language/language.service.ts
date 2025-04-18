@@ -1,16 +1,16 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 
-type Language = "ES" | "EN";
+import { Idiom } from '../../interfaces/language/language.interface';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LanguageService {
-  private dataSubject = new BehaviorSubject<Language>('EN');
-  data$: Observable<Language> = this.dataSubject.asObservable();
+  private dataSubject = new BehaviorSubject<Idiom>('ES');
+  data$: Observable<Idiom> = this.dataSubject.asObservable();
 
-  updateLanguage(newValue: Language) {
+  updateLanguage(newValue: Idiom) {
     this.dataSubject.next(newValue);
   }
 

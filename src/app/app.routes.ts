@@ -1,13 +1,26 @@
 import { Routes } from '@angular/router';
 
-import { LoginComponent } from './pages/auth/login/login.component';
-
 import { HomeComponent } from './pages/dashboard/home/home.component';
 
 export const routes: Routes = [
   {
     path: '',
-    component: LoginComponent,
+    children: [
+      {
+        path: 'login',
+        loadComponent: () =>
+          import('./pages/auth/login/login.component').then(
+            (c) => c.LoginComponent
+          ),
+      },
+      {
+        path: 'recovery',
+        loadComponent: () =>
+          import(
+            './pages/auth/recover-password/recover-password.component'
+          ).then((c) => c.RecoverPasswordComponent),
+      },
+    ],
   },
   {
     path: 'dash',

@@ -1,0 +1,1 @@
+export type Idiom = "EN" | "ES";

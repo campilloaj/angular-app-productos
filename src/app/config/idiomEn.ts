@@ -14,4 +14,6 @@ export const idiomEn = {
   etSegundoApellido: 'Second surname',
   etContrasena: 'Password',
   etIniciarSesion: 'Login',
+  etRecuperaContrasena: 'Recover password',
+  etRegresar:'Go back'
 };
