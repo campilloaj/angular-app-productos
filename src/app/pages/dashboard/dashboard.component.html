@@ -1,5 +1,7 @@
 <app-navbar/>
-
-<p>dashboard works!</p>
-
-<router-outlet />
+<main class="flex h-[calc(100dvh-64px)]">
+   <app-sidebar></app-sidebar>
+   <div class="bg-amber-400 w-full">
+      <router-outlet />
+   </div>
+</main>

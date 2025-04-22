@@ -7,5 +7,8 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 @theme {
    --color-myprimary-800: oklch(0.438 0.218 303.724);
    --color-myprimary-700: oklch(0.496 0.265 301.924);
+   --color-secondary-700: oklch(.373 .034 259.733);
+   --color-secondary-300: oklch(.872 .01 258.338);
+   --color-secondary-200: oklch(.928 .006 264.531);
    --text-myprimary-800: oklch(0.438 0.218 303.724);
  }

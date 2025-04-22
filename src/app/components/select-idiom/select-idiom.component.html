@@ -1,4 +1,56 @@
-<select [value]="data" (change)="handleChangeLanguage($event)" class="text-myprimary-800 border-0 block px-4 py-2rounded-md focus:outline-none">
-   <option value="ES">{{  "etEspanol" | language }}</option>
-   <option value="EN">{{  "etIngles" | language }}</option>
- </select>
+<div class="relative inline-block text-left">
+  <div class="flex items-center gap-1" (click)="handleMenuIdiom()">
+    <button
+      class="rounded-full bg-white shadow-2xl w-10 h-10 flex justify-center items-center"
+      id="menu-button"
+      aria-expanded="true"
+      aria-haspopup="true"
+    >
+      <abbr class="w-full mt-0.5 pb-0 mb-0">{{ data }}</abbr>
+    </button>
+
+    <svg
+      class="size-5 text-myprimary-700"
+      viewBox="0 0 20 20"
+      fill="currentColor"
+      aria-hidden="true"
+      data-slot="icon"
+    >
+      <path
+        fill-rule="evenodd"
+        d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z"
+        clip-rule="evenodd"
+      />
+    </svg>
+  </div>
+
+  @if (showMenuIdiom) {
+
+  <div
+    class="absolute transition-opacity duration-300 right-0 z-10 mt-2 w-auto origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black/5 focus:outline-hidden"
+    role="menu"
+    aria-orientation="vertical"
+    aria-labelledby="menu-button"
+    tabindex="-1"
+  >
+    <div class="py-1" role="none">
+      <button
+        (click)="handleChangeLanguage('ES')"
+        class="w-full border-0 block px-4 py-2 text-sm text-gray-700"
+        role="menuitem"
+      >
+        {{ "etEspanol" | language }}
+      </button>
+
+      <button
+        (click)="handleChangeLanguage('EN')"
+        class="w-full border-0 block px-4 py-2 text-sm text-gray-700"
+        role="menuitem"
+      >
+        {{ "etIngles" | language }}
+      </button>
+    </div>
+  </div>
+
+  }
+</div>

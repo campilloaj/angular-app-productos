@@ -36,7 +36,7 @@ export class ToastService {
   }
 
 
-  public show(messageCode: Array<MessageKey> | string, type="warning" , duration = 1500 ) {
+  public show(messageCode: Array<MessageKey> | string, type: | 'warning' | 'error' | 'info'= "warning" , duration = 1500 ) {
  
     let tempArray:string[] = [];
 
